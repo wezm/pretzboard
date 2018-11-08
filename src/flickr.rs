@@ -256,7 +256,7 @@ impl Client {
 
         let url = "https://www.flickr.com/services/oauth/request_token";
         let oauth_signature = signature(
-            reqwest::Method::Get,
+            reqwest::Method::GET,
             url,
             &params,
             &self.consumer_secret,
@@ -309,7 +309,7 @@ impl Client {
 
         let url = "https://www.flickr.com/services/oauth/access_token";
         let oauth_signature = signature(
-            reqwest::Method::Get,
+            reqwest::Method::GET,
             url,
             &params,
             &self.consumer_secret,
@@ -383,7 +383,7 @@ impl AuthenticatedClient {
 
         let url = "https://api.flickr.com/services/rest";
         let oauth_signature = signature(
-            reqwest::Method::Get,
+            reqwest::Method::GET,
             url,
             &params,
             &self.consumer_secret,
@@ -507,7 +507,7 @@ fn test_signature_base_string() {
         ("oauth_callback", String::from("http://www.example.com")),
     ];
 
-    assert_eq!(signature_base_string(reqwest::Method::Get, "https://www.flickr.com/services/oauth/request_token", &params), "GET&https%3A%2F%2Fwww.flickr.com%2Fservices%2Foauth%2Frequest_token&oauth_callback%3Dhttp%253A%252F%252Fwww.example.com%26oauth_consumer_key%3D653e7a6ecc1d528c516cc8f92cf98611%26oauth_nonce%3D95613465%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1305586162%26oauth_version%3D1.0");
+    assert_eq!(signature_base_string(reqwest::Method::GET, "https://www.flickr.com/services/oauth/request_token", &params), "GET&https%3A%2F%2Fwww.flickr.com%2Fservices%2Foauth%2Frequest_token&oauth_callback%3Dhttp%253A%252F%252Fwww.example.com%26oauth_consumer_key%3D653e7a6ecc1d528c516cc8f92cf98611%26oauth_nonce%3D95613465%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1305586162%26oauth_version%3D1.0");
 }
 
 // #[test]
