@@ -1,0 +1,30 @@
+[package]
+name = "pretzboard"
+version = "0.1.0"
+authors = ["Wesley Moore <wes@wezm.net>"]
+
+[dependencies]
+env_logger = "*"
+
+ftp = "3.0"
+reqwest = "*"
+hmac = "*"
+sha-1 = "*"
+base64 = "0.9"
+percent-encoding = "1.0"
+uuid = { version = "0.6", features = ["v4"] }
+
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+
+failure = "*"
+failure_derive = "*"
+
+threadpool = "1.7"
+piston = "0.37"
+pistoncore-glfw_window = "0.43"
+piston2d-opengl_graphics = "0.53"
+piston2d-graphics = "0.26"
+image = "0.19"
+chrono = "0.4"
